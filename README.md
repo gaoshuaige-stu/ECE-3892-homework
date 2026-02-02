@@ -28,18 +28,18 @@ models/ (quantized ONNX model + tokenizer files)
 README.md  
 
 ---
-
-## Option 1 (Recommended): Pull Prebuilt Docker Image
+## Build Docker Image
+### Option 1 (Recommended): Pull Prebuilt Docker Image
 Instead of building locally, you may pull the container directly from Docker Hub:
 
 ```bash
 docker pull gaoshuaige/t5-onnx-summarizer
 ```
 
-## Option 2: Build Docker Image Locally
-### Prerequisites
+### Option 2: Build Docker Image Locally
+#### Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed
-### Build the Container
+#### Build the Container
 - Before building the container, ensure the project directory is organized as follows:
 ```
 t5-onnx-summarizer/
@@ -77,7 +77,10 @@ Navigate to the project directory and run:
 docker build -t t5-onnx-summarizer .
 ```
 This process installs dependencies and packages the quantized ONNX model into the container.
-## Method 1 — Summarize a Text File (Recommended)
+
+---
+## Run Docker Image
+### Method 1 — Summarize a Text File (Recommended)
 Place the text file in your current directory and mount it into the container.
 To run the container successfully, ensure that the file:
 
@@ -92,25 +95,26 @@ This requirement applies to **Windows, macOS, and Linux**.
 The Docker command mounts your current directory into the container, allowing the inference script to access the file.
 
 
-### Windows (PowerShell)
+#### Windows (PowerShell)
 ``` powershell
 docker run --rm `
 -v "${PWD}:/data" `
 gaoshuaige/t5-onnx-summarizer `
 --file /data/summarize_article.txt
 ```
-### macOS / Linux
+#### macOS / Linux
 ```bash
 docker run --rm \
 -v "$(pwd)":/data \
 gaoshuaige/t5-onnx-summarizer \
 --file /data/summarize_article.txt
 ```
-## Method 2 — Direct Text Input
+### Method 2 — Direct Text Input
 ```bash
 docker run --rm gaoshuaige/t5-onnx-summarizer \
 --text "Paste any technical paragraph here..."
 
 ```
+
 
 
