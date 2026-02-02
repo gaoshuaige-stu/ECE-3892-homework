@@ -41,6 +41,7 @@ docker pull gaoshuaige/t5-onnx-summarizer
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed
 ### Build the Container
 - Before building the container, ensure the project directory is organized as follows:
+```
 t5-onnx-summarizer/
 │
 ├── Dockerfile
@@ -52,7 +53,7 @@ t5-onnx-summarizer/
     ├── t5_small_onnx_quantized/
     │   ├── encoder_model.onnx
     │   ├── decoder_model.onnx
-    │   ├── decoder_with_past_model.onnx
+    │   ├── decoder_with_past_model.onnx  
     │   ├── config.json
     │   ├── tokenizer_config.json
     │   ├── tokenizer.json / spiece.model
@@ -65,7 +66,9 @@ t5-onnx-summarizer/
         ├── config.json
         ├── tokenizer_config.json
         ├── tokenizer.json / spiece.model
-        └── special_tokens_map.json 
+        └── special_tokens_map.json
+```
+
   [t5_small_onnx and t5_small_onnx_quantized](https://drive.google.com/drive/folders/1t6bxuPiEnrbfll-Zz1PbXbqTQQ1CEFgD?usp=sharing) can  be found here.
 
 
@@ -109,4 +112,5 @@ docker run --rm gaoshuaige/t5-onnx-summarizer \
 --text "Paste any technical paragraph here..."
 
 ```
+
 
